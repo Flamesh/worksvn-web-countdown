@@ -58,9 +58,8 @@ const styles = theme => ({
     width: 270,
     height: 50,
     color: "white",
-    marginLeft: 200,
+    marginLeft: 250,
     marginTop: 25,
-    fontFamily: "Calibri",
     backgroundColor: 'orange',
     
   },
@@ -235,17 +234,17 @@ class Countdown extends Component {
           <Grid>
             <Grid>
             <h1 className={classes.textInfor}> 
-              <div><font size="6" face="Calibri"> THỨ HAI, 9:09' 09.09.19</font></div>
+              <div><font size="6"> THỨ HAI, 9:09' 09.09.19</font></div>
               <div><font size="6">PHÁT HÀNH SẢN PHẨM </font></div>
               <div><font size="6.5">CỔNG THÔNG TIN KẾT NỐI </font></div>
               <div><font size="6.5"> WORKS.VN</font></div>
               <div/>
               <div>________________________________</div>
               <div/>
-              <div><font size="3.4">"Kết nối Sinh viên - Nhà trường - Doanh nghiệp</font></div>
+              <div><font size="4">"Kết nối Sinh viên - Nhà trường - Doanh nghiệp</font></div>
             </h1>
             <Button className={classes.button2} variant="outlined" color="primary"> 
-                <font size="5" face="Calibri">Quan Tâm</font>
+                <font size="5" >Quan Tâm</font>
             </Button>
             </Grid>
           </Grid>
