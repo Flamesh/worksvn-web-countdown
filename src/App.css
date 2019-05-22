@@ -3,7 +3,8 @@
   font-family: sans-serif;
   text-align: center;
   color: black;
-  min-height: 110vh;
+  min-height: 100vh;
+  width: 200vh;
   margin-top: -10vmin;
   background-color:  DodgerBlue;
 }
@@ -32,6 +33,7 @@
   text-align: center;
   color: black;
   height: 73vh;
+  
   margin-top: -10vmin;
   background-color:  white;
 }
@@ -45,7 +47,7 @@
 }
 
 .Grid-footer{
-  margin: 15vmin;
+  margin: 10vmin;
   margin-top: 10vmin;
   min-width: 110vmin;
 }
