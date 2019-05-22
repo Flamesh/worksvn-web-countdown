@@ -62,17 +62,18 @@ class App extends Component {
       <div className="App-footer">
       <div>
         <br></br><br></br>
-        <font className="App-text" size="10" face="Calibri">
+        <font className="App-text" size="9">
         DỊCH VỤ CUNG CẤP 
         </font> 
       </div>
       <br/>
+      <br/>
       <Container maxWidth="md" componen="footer">
-      <Grid container spacing={10} justify="space-evenly" className="Grid-footer">
+      <Grid container spacing={2} justify="space-evenly" className="Grid-footer">
           {footers1.map(footer => (
-            <Grid item xs={10} sm={4} key={footer.title} spacing={10}>
+            <Grid item xs={10} sm={4} key={footer.title} spacing={2}>
               <Typography variant="h5" color="textPrimary" gutterBottom>
-                <font size="6" face="Calibri">{footer.title}</font>
+                <font size="5">{footer.title}</font>
               </Typography>
               <Typography align="left" variant="h7" color="textPrimary" gutterBottom>
               <font size="2">{footer.description}</font>
@@ -80,11 +81,12 @@ class App extends Component {
             </Grid>
           ))}
         </Grid>
+        <br></br>
        <Grid container spacing={10} justify="space-evenly" className="Grid-footer">
           {footers2.map(footer => (
-            <Grid item xs={10} sm={4} key={footer.title} spacing={10}>
+            <Grid item xs={10} sm={4} key={footer.title} spacing={2}>
               <Typography variant="h5" color="textPrimary" gutterBottom>
-                <font size="6" face="Calibri">{footer.title}</font>
+                <font size="5">{footer.title}</font>
               </Typography>
               <Typography align="left" variant="h7" color="textPrimary" gutterBottom>
                 <font size="2">{footer.description}</font>
