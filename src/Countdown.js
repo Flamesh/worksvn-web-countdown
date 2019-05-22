@@ -17,48 +17,99 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
 //import tileData from './tileData';
+import AppBar from '@material-ui/core/AppBar';
+import Button from '@material-ui/core/Button';
+import CameraIcon from '@material-ui/icons/PhotoCamera';
+
+
+import Toolbar from '@material-ui/core/Toolbar';
+
+import { makeStyles } from '@material-ui/core/styles';
+
+import Link from '@material-ui/core/Link';
 
 import './App.css'
-import { CardHeader, Paper } from '@material-ui/core';
-/**
- * Note : 
- * If you're using react v 15.4 or less
- * You can directly import PropTypes from react instead. 
- * Refer to this : https://reactjs.org/warnings/dont-call-proptypes.html
- */
+import { CardHeader, Paper, Hidden } from '@material-ui/core';
+import { blue, pink } from '@material-ui/core/colors';
+import color from '@material-ui/core/colors/indigo';
 
-const tiers = [
-  {
-    title: 'Day',
-  },
-  {
-    title: 'Hours',   
-  },
-  {
-    title: 'Min', 
-  },
-  {
-    title: 'Second',
-  },
-]
+import { unstable_Box as Box } from '@material-ui/core/Box';
+
+
+
 const styles = theme => ({
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    height: 200,
-    width: 100,
-  },
   gridTime: {
-    height: 60,
-    width: 90
+    flexGrow: 1,
+    marginTop: 100
   },
+  
   control: {
     padding: theme.spacing(2),
   },
+  button: {
+    width: 330,
+    height: 50,
+    color: "red",
+    marginTop: 23,
+    borderWidth: 3,
+  },
+  button2: {
+    width: 270,
+    height: 50,
+    color: "white",
+    marginLeft: 200,
+    marginTop: 25,
+    fontFamily: "Calibri",
+    backgroundColor: 'orange',
+    
+  },
+  paper: {
+    ...theme.mixins.gutters(),
+    marginLeft: 200,
+    marginTop: 80,
+    paddingTop: theme.spacing.unit * 10,
+    paddingBottom: theme.spacing.unit * 2,
+    width: 380,
+    height: 450,
+  },
+  paper2: {
+    ...theme.mixins.gutters(),
+    marginLeft: 650,
+    marginTop: -420,
+    width: 400,
+    height: 400,
+    color: "red",
+    
+    
+  },
+  box: {
+    border: 2,
+    border: "black",
+    marginTop: -80,
+    width: 66,
+    height: 66,
+    background: "#FF0040",
+    color: "white"
+  },
+  Typography: {
+    color: "DodgerBlue",
+    marginTop: -70,
+  },
+  textInfor: {
+    marginLeft: 650,
+    marginTop: -450,
+    color: "#FBEFEF",
+    textAlign: "left",
+  },
+  textInBox: {
+    
+    ...theme.typography.button,
+    //backgroundColor: theme.palette.common.white,
+    padding: theme.spacing.unit,
+  }
 });
+
 class Countdown extends Component {
   constructor(props) {
     super(props);
@@ -70,7 +121,7 @@ class Countdown extends Component {
       sec: 0,
     }
   }
-
+  
   componentDidMount() {
     // update every second
     this.interval = setInterval(() => {
@@ -91,11 +142,11 @@ class Countdown extends Component {
     if (diff <= 0) return false;
 
     const timeLeft = {
-      years: 0,
+      years: 1,
       days: 0,
       hours: 0,
       min: 0,
-      sec: 0
+      sec: 2
     };
     
     // calculate time difference between now and expected date
@@ -131,13 +182,12 @@ class Countdown extends Component {
     }
     return value;
   }
-
   render() {
-    const countDown = this.state;
     const {classes} = this.props;
+    const countDown = this.state;
     return (
-      <div className="App">
-        <React.Fragment><CssBaseline/>      
+      <React.Fragment><CssBaseline/>      
+          
           <Grid item xs={12}>     
           <Grid container spacing={5} >
           <Paper className={classes.paper} elevation={1} >            
@@ -149,27 +199,35 @@ class Countdown extends Component {
           <Grid container className={classes.gridTime} spacing={2}>
           <Grid container className={classes.demo} justify="center" spacing="2">
               <Grid item>
-                <Paper className={classes.box} />
+                  <Paper className={classes.box} component="div">
+                  <div align="center" className={classes.textInBox}><font size="6">{this.addLeadingZeros(countDown.days)}</font></div>
+                  </Paper>
               </Grid>
               <Grid item>
-                <Paper className={classes.box} />
+                  <Paper className={classes.box} component="div">
+                  <div align="center" className={classes.textInBox}><font size="6">{this.addLeadingZeros(countDown.hours)}</font></div>
+                  </Paper>
               </Grid>
               <Grid item>
-                <Paper className={classes.box} />
+                  <Paper className={classes.box} component="div">
+                  <div align="center" className={classes.textInBox}><font size="6">{this.addLeadingZeros(countDown.min)}</font></div>
+                  </Paper>
               </Grid>
               <Grid item>
-                <Paper className={classes.box} />
+                  <Paper className={classes.box} component="div">
+                  <div align="center" className={classes.textInBox}><font size="6">{this.addLeadingZeros(countDown.sec)}</font></div>
+                  </Paper>
               </Grid>
           </Grid>
         </Grid>
-        <Button href="#" color="primary" variant="outlined" className={classes.button}>
-            ỨNG DỤNG TÌM VIỆC
+        <Button href="#" color="primary" color="defaul" variant="outlined" className={classes.button}>
+            <font size="4" face="Arial">ỨNG DỤNG TÌM VIỆC </font>
         </Button>
         <Button href="#" color="primary" variant="outlined" className={classes.button}>
-            WEDSITE TUYỂN DỤNG
+        <font size="4" face="Arial">WEDSITE TUYỂN DỤNG </font>
         </Button>
         <Button href="#" color="primary" variant="outlined" className={classes.button}>
-            WEDSITE TUYỂN SINH
+        <font size="4" face="Arial">WEDSITE TUYỂN SINH </font>
         </Button>
          </Paper>
           </Grid>
@@ -179,22 +237,20 @@ class Countdown extends Component {
             <h1 className={classes.textInfor}> 
               <div><font size="6" face="Calibri"> THỨ HAI, 9:09' 09.09.19</font></div>
               <div><font size="6">PHÁT HÀNH SẢN PHẨM </font></div>
-              <div><font size="6">CỔNG THÔNG TIN KẾT </font></div>
-              <div><font size="6">NỐI WORKS.VN</font></div>
+              <div><font size="6.5">CỔNG THÔNG TIN KẾT NỐI </font></div>
+              <div><font size="6.5"> WORKS.VN</font></div>
               <div/>
               <div>________________________________</div>
               <div/>
               <div><font size="3.4">"Kết nối Sinh viên - Nhà trường - Doanh nghiệp</font></div>
             </h1>
-            <Button className={classes.button2} variant="outlined"color="primary"> 
-                <font size="2.5">Quan Tâm</font>
+            <Button className={classes.button2} variant="outlined" color="primary"> 
+                <font size="5" face="Calibri">Quan Tâm</font>
             </Button>
             </Grid>
           </Grid>
          </Grid>  
       </React.Fragment>
-      </div>
-      
     );
   }
 }
