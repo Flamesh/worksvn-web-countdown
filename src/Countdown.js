@@ -106,7 +106,10 @@ const styles = theme => ({
     ...theme.typography.button,
     //backgroundColor: theme.palette.common.white,
     padding: theme.spacing.unit,
-  }
+  },
+  link: {
+    textDecoration: "none",
+  },
 });
 
 class Countdown extends Component {
@@ -244,7 +247,7 @@ class Countdown extends Component {
               <div><font size="4">"Kết nối Sinh viên - Nhà trường - Doanh nghiệp</font></div>
             </h1>
             <Button className={classes.button2} variant="outlined" color="primary"> 
-                <font size="5" >Quan Tâm</font>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeAWpIKQJ593fw78yTQmnhbKUbvKsv37zvfKH3RqSQk1RQsXA/viewform" className={classes.link}><font size="5" >Quan Tâm</font></a>
             </Button>
             </Grid>
           </Grid>
